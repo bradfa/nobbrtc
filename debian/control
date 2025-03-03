@@ -1,0 +1,14 @@
+Source: nobbrtc
+Maintainer: Andrew Bradford <bradfa@gmail.com>
+Section: misc
+Priority: optional
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13)
+
+Package: nobbrtc
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: time of day save/restore script
+ nobbrtc saves the current time to a file on shutdown and restores it on
+ startup.  This is useful on systems which lack a battery-backed real time
+ clock so that time never goes backwards across reboots or poweroffs.
