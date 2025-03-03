@@ -1,0 +1,15 @@
+[Unit]
+Description=File-based replacement for a battery backed real time clock
+After=local-fs.target
+Before=basic.target
+Conflicts=shutdown.target
+DefaultDependencies=false
+
+[Service]
+ExecStart=-/usr/sbin/nobbrtc.sh restore
+ExecStop=/usr/sbin/nobbrtc.sh save
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=basic.target
